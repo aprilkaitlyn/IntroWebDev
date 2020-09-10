@@ -19,6 +19,7 @@ body {
   max-width: 960px;
   min-width: 640px;
   text-align: center;
+  margin: 0 auto;
   min-height: 100%;}
 
 header, ul, nav, li, a {
