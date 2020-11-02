@@ -55,10 +55,10 @@ function candidateRows(raceNum, totalVotes) {
         var candidateVotes = votes[raceNum][j];
         var candidatePercent = calcPercent(candidateVotes, totalVotes);
         rowHTML += '<tr>' +
-            '<td>' + candidateName + '(' + candidateParty + ')' + '</td>' +
+            '<td>' + candidateName + ' (' + candidateParty + ') ' + '</td>' +
             '<td>' + candidateVotes.toLocaleString() +
-            '(' + candidatePercent.toFixed(1) + ')' + '</td>';
-        for (var k = 0; k < candidatePercent; k++) {
+            '( ' + candidatePercent.toFixed(1) + '%)' + '</td>';
+        for (var k = 0; k < candidatePercent; k++ ) {
             rowHTML += createBar(candidateParty)
         }
         rowHTML += '</tr>';
