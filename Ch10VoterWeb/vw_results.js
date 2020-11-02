@@ -4,7 +4,6 @@
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 10
    Case Problem 4
-
    Author: Kaitlyn Heishman
    Date: 26 October 2020   
    
@@ -19,34 +18,34 @@
    a value and a sum
    
    The createBar(partyType, percent) function writes a different
-   table data table based on the candidates party affilication.
-   
-      
+   table data table based on the candidates party affilication.    
 */
 
 /* Callback Function to calculate an array sum */
 function calcSum(value) {
-   totalVotes += value;
+    totalVotes += value;
 }
-
 /* Function to calculate a percentage */
 function calcPercent(value, sum) {
-   return (100*value/sum);
+    return 100 * value / sum;
 }
 
-var reportHTML = "<h1>" + raceTitle + "</h1>";
+var reportHTML = '<h1>' + raceTitle + '</h1>';
 
-for(var i = 0; i < race.length; i++) {
-  var totalVotes = 0;
-  votes[i].forEach(calcSum);
-  reportHTML += "<table> \
-                <caption>" + race[i] + "</caption> \
-                <tr><th>Candidate</th><th>Votes</th></tr>"; 
-  reportHTML += candidateRows(i, totalVotes);
-  reportHTML += "</table>"
+for (var i = 0; i < race.length; i++) {
+    var totalVotes = 0;
+    votes[i].forEach(function (value) {
+        calcSum(value); });
+
+    reportHTML += '<table>' +
+        '<caption>' + race[i] + '</caption>' +
+        '<tr><th>' + 'Candidate' + '</th><th>' + 'Votes' + '</th></tr>' +
+        '<tr>' + candidateRows(i, totalVotes) + '</tr>';
+
+    reportHTML += '</table>';
 }
 
-document.getElementsByTagName('section')[0].innerHTML = reportHTML;
+document.querySelector('section').innerHTML = reportHTML;
 
 function candidateRows(raceNum, totalVotes) {
     var rowHTML = '';
@@ -55,11 +54,13 @@ function candidateRows(raceNum, totalVotes) {
         var candidateParty = party[raceNum][j];
         var candidateVotes = votes[raceNum][j];
         var candidatePercent = calcPercent(candidateVotes, totalVotes);
-        rowHTML += '<tr><td>' + candidateName + ' (' + candidateParty + ') ' + '</td>' +
+        rowHTML += '<tr>' +
+            '<td>' + candidateName + '(' + candidateParty + ')' + '</td>' +
             '<td>' + candidateVotes.toLocaleString() +
             '(' + candidatePercent.toFixed(1) + ')' + '</td>';
-        for (var k = 0; k < candidatePercent.toFixed(0); k++) {
-            rowHTML += createBar(candidateParty); }
+        for (var k = 0; k < candidatePercent; k++) {
+            rowHTML += createBar(candidateParty)
+        }
         rowHTML += '</tr>';
     }
     return rowHTML;
@@ -79,4 +80,4 @@ function createBar(partyType) {
             break;
     }
     return barHTML;
-}
+}      
