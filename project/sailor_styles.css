@@ -4,7 +4,9 @@
       src: url(‘Autery.tff’) format(‘truetype’); }
 
 html {background: url(sailor_background.jpg) cover fixed;
-      background-color: 77.3, 54.5, 90.6;
-      font-family: Autery, cursive;
+      background-color: 77.3, 54.5, 90.6; }
+
+h1 {font-family: Autery, cursive;
       font-size: 12px;
-      text-align: center;}
+      font-color: white;
+      text-align: center; }
