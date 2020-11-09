@@ -1,2 +1,3 @@
-background-image: url(sailor_background.jpg);
-background-size: cover;
+@charset = "utf-8";
+html {background-image: url(sailor_background.jpg);
+  background-size: cover; }
