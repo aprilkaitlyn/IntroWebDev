@@ -3,7 +3,7 @@
   font-family: Autery;
       src: url(‘Autery.tff’) format(‘truetype’); }
 
-html {background: url(sailor_background.jpg) 100% / cover fixed;
+html {background: url(sailor_background.jpg) cover fixed;
       font-family: Autery, cursive;
       font-size: 12px;
       text-align: center;}
