@@ -1,4 +1,9 @@
 @charset = "utf-8";
+@font-face {
+  font-family: Autery;
+      src: url(‘autery.tff’) format(‘truetype’); }
+
 html {background: url(sailor_background.jpg) 100% / cover fixed;
-      font-family: Verdana, Geneva, sans-serif;
-      font-size: 12px;}
+      font-family: Autery, cursive;
+      font-size: 12px;
+      text-align: center;}
